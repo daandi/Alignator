@@ -36,39 +36,23 @@
 	</div>
 </fieldset>
 
-<fieldset>
-	<legend>Folgende Zeilen konnten nicht aligniert werden</legend>
-	<h2>OCR</h2>
-	<ul>
-	<% for line in @surplus_lines[:ocr] %>
-		<li><%= line %></li>
-	<% end %>
-	</ul>
-	
-	<h2>WeakOCR</h2>
-	<ul>
-	<% for line in @surplus_lines[:weak_ocr] %>
-		<li><%= line %></li>
-	<% end %>
-	</ul>
-</fieldset>
 
 <fieldset>
 	<legend>Folgende Wörter konnten nicht aligniert werden</legend>
 	<h2>OCR</h2>
 	<ull>
-	<% for line,index in @dropped_words[:ocr].each_with_index %>
-		<%  if line != []%>
-			<li>Zeile <%= index +1 %> : <%= line %> </li>
+	<% for wort,index in @dropped_words[:ocr].each_with_index %>
+		<%  if wort != []%>
+			<li>  <%= wort %> </li>
 		<% end %>
 	<% end %>
 	</ul>
 	
 	<h2>WeakOCR</h2>
 	<ul>
-	<% for line,index in @dropped_words[:weak_ocr].each_with_index %>
-		<%  if line != []%>
-			<li>Zeile <%= index +1 %> : <%= line %> </li>
+	<% for wort,index in @dropped_words[:weak_ocr].each_with_index %>
+		<%  if wort != []%>
+			<li><%= wort %> </li>
 		<% end %>
 	<% end %>
 	</ul>
