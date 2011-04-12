@@ -38,6 +38,11 @@
   	<td>Wordcount <%=@word_count_weak_ocr %></td>
   	<td>Wordcount <%= @word_count_gt %></td>
   </tr>
+  <tr id="percent">
+  	<td>Prozentsatz alignierter Wörter <%=@percent_alignated  %> %</td>
+  	<td></td>
+  	<td></td>
+  </tr>
   	<td>
   	  <% for line in  @alignated_words do %>
 		<% for word in line do%>

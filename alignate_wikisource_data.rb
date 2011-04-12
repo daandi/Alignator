@@ -32,6 +32,8 @@ for filename in ['Seite_Gottschalck_Sagen_und_Voksmaehrchen_der_Deutschen_194', 
     @word_count_gt = @ground_truth.lines.flatten.length
     @word_count_weak_ocr=  @weak_ocr.lines.flatten.length
     @word_count_alignated =  @alignated_words.flatten.length
+    
+    @percent_alignated = 100.0 / @word_count_gt * @word_count_alignated
 
     @html << ERB.new( File.open('wikisource_alignated_image.erb' ){ |f| f.read } ).result( binding )	
 end
