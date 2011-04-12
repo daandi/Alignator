@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link rel="stylesheet" type="text/css" href="proto.css"/> 
+	<title>alignated_image</title>
+	
+</head>
+
+<body>
+	
+<fieldset>
+	<legend>Alignierte Grafik</legend>
+	<div id='wikisource_marked_image'
+	 style='background-image: url(<%= @image_url %>); width: <%= @width%> ; height: <%=@height%>'>
+	<% for line in  @alignated_words do %>
+		<% for word in line do%>
+			<%= word.to_html %>
+		<% end %>
+	<% end %>
+	
+</div>
+</fieldset>
+
+
+
+
+<table id="vergleich">
+  <tr>
+    <th>Alignierter Text</th>
+    <th>gescannter Text</th>
+    <th>Groundtruth</th>
+  </tr>
+  <tr id="word_count">
+  	<td>Wordcount <%=@word_count_alignated %></td>
+  	<td>Wordcount <%=@word_count_weak_ocr %></td>
+  	<td>Wordcount <%= @word_count_gt %></td>
+  </tr>
+  	<td>
+  	  <% for line in  @alignated_words do %>
+		<% for word in line do%>
+			<%= word.text %>
+		<% end %>
+	  <% end %>
+  	</td>
+  	<td>
+  	  <% for line in @weak_ocr.lines do %>
+		<% for word in line do%>
+			<%= word.text %>
+		<% end %>
+	  <% end %>
+  	</td>
+  	<td>
+  	  <% for line in @ground_truth.lines do %>
+		<% for word in line do%>
+			<%= word %>
+		<% end %>
+	  <% end %>
+  	</td>
+  <tr>
+	
+</table>
+
+
+
+<fieldset>
+	<legend>Folgende Wörter konnten nicht aligniert werden</legend>
+	<h2>OCR</h2>
+	<ul class="not_aligned_ocr">
+	<% for wort,index in @dropped_words[:ocr].each_with_index %>
+		<%  if wort != []%>
+			<li>  <%= wort %> </li>
+		<% end %>
+	<% end %>
+	</ul>
+	<div clas='cleaner'></div>
+	<h2>WeakOCR</h2>
+	<ul class="not_aligned_weak_ocr">
+	<% for wort,index in @dropped_words[:weak_ocr].each_with_index %>
+		<%  if wort != []%>
+			<li><%= wort %> </li>
+		<% end %>
+	<% end %>
+	</ul>
+	<div clas='cleaner'></div>
+</fieldset>
+
+
+</body>
+</html>
