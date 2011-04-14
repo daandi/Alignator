@@ -71,18 +71,9 @@
 <fieldset>
 	<legend>Alignierung</legend>
 	<h2>Aufsteigender Abstand</h2>
-	<ul>
+	<ul class="alignated_words">
 	<% for wort in @sorted_alignated_words %>
-		<li>  <%= wort %> </li>
-	<% end %>
-	</ul>
-	<div clas='cleaner'></div>
-	<h2>WeakOCR</h2>
-	<ul class="not_aligned_weak_ocr">
-	<% for wort,index in @dropped_words[:weak_ocr].each_with_index %>
-		<%  if wort != []%>
-			<li><%= wort %> </li>
-		<% end %>
+		<%= wort.to_html_li %>
 	<% end %>
 	</ul>
 	<div clas='cleaner'></div>

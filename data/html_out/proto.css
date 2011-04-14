@@ -117,3 +117,8 @@ table {
 h2 {
 	border-bottom:0.2em solid #333;
 }
+
+
+.alignated_words {
+	width: 50%;
+}

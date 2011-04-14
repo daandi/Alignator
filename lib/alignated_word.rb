@@ -23,6 +23,10 @@ class AlignatedWord < OCRXWord
         "<span class='distance'>" + @distance.to_s + "</span></span></span>\n"
     end
     
+    def to_html_li
+        "\n<li class= #{@css_marker_class} style='opacity:8;'>#{CGI::escapeHTML(@old_text)}→#{CGI::escapeHTML(@text)} (#{@distance.to_s})</li>"
+    end
+    
     def to_s
         "#{@text}→#{@old_text} (#{@distance})"
     end
