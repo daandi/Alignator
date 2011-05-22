@@ -1,0 +1,15 @@
+GT 185 Wörter
+OCR 183
+
+# WeakOCR : verloren / davon korrekt im WeakOCR
+5 / 0
+# falsch korrigiert :
+0
+# Named Entities : möglich / korrekt OCR / fehlkorrigiert / repariert
+1 / 1 / 0 / 0 --> 1
+# korrekt Korrekturen
+40
+#merges repariert
+12
+#splits reparier
+5

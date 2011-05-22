@@ -1,0 +1,14 @@
+GT / OCR / Aligned
+1291 / 1310 / 1280
+# WeakOCR : verloren / davon korrekt im WeakOCR
+12 / 6
+# falsch korrigiert :
+2
+# Named Entities : möglich / korrekt OCR / fehlkorrigiert / repariert
+33 / 22 / 0 / 10 --> 32
+# korrekt Korrekturen
+115
+#merges repariert
+1
+#splits repariert
+26

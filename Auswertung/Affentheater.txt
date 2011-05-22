@@ -1,5 +1,17 @@
+152 Wörter
+
 # WeakOCR - verloren aber korrekt
-
+0 / 0
 # falsch aligniert
-
+0
 # Named Entities
+8 im Text
+4 korrekt im OCR
+4 repariert
+
+--> 8
+# korrekt Korrekturen
+21
+
+#Fixed Spilits
+8
