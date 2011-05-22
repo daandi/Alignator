@@ -1,0 +1,5 @@
+# WeakOCR - verloren aber korrekt
+
+# falsch aligniert
+
+# Named Entities

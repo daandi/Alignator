@@ -80,6 +80,17 @@
 </fieldset>
 
 <fieldset>
+	<legend>Alignierung</legend>
+	<h2>Korrekte Reihenfolge</h2>
+	<ul class="alignated_words">
+	<% for wort in @alignated_words.flatten %>
+		<%= wort.to_html_li %>
+	<% end %>
+	</ul>
+	<div clas='cleaner'></div>
+</fieldset>
+
+<fieldset>
 	<legend>Folgende Wörter konnten nicht aligniert werden</legend>
 	<h2>OCR</h2>
 	<ul class="not_aligned_ocr">
