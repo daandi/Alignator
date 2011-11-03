@@ -6,7 +6,6 @@ class AlignatedWord < OCRXWord
 	 
     attr_reader :old_text, :distance
     
-    
     def initialize( x1, y1, x2, y2, word, old_word, distance, css_marker_class)
         super(x1,y1,x2,y2,word)
         @old_text = old_word
