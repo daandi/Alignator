@@ -26,4 +26,3 @@ word_alignator.alignate
 	}
 
 @html << ERB.new( File.open('alignated_image.erb' ){ |f| f.read } ).result( binding )
-

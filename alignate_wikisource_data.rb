@@ -4,7 +4,7 @@ require_relative "lib/weak_ocr"
 require_relative "lib/ocr"
 require_relative 'lib/ocrx_word'
 require 'erb'
-require 'paperclip'
+#require 'paperclip'
 path = "data"
 
 for filename in ['Seite_Gottschalck_Sagen_und_Voksmaehrchen_der_Deutschen_194', 'Lied_aus_Schlaufaffenland', 'Gelobet_seystu_Jesu_Christ','Ein_erschoecklich_gschicht_Vom_Tewfel','Affentheater','Sant_kmernusl','Ueber_den_Gebrauch_des_englischen_Wortes_Sir','Seite_Die_Gartenlaube_242','Seite_Tagebuch_H_C_Lang_05','Seite_Tagebuch_H_C_Lang_08'] do
@@ -35,6 +35,4 @@ for filename in ['Seite_Gottschalck_Sagen_und_Voksmaehrchen_der_Deutschen_194', 
     @percent_alignated = 100.0 / @word_count_gt * @word_count_alignated
     @sorted_alignated_words = @alignated_words.flatten.sort_by {|a| a.distance}.reverse
     @html << ERB.new( File.open('wikisource_alignated_image.erb' ){ |f| f.read } ).result( binding )	
-    
-    puts @html
 end
